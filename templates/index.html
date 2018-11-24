@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>
       Lowest Pizza Prices in the area
@@ -7,21 +8,31 @@
   </head>
 
   <body>
+    <h1>
+      Lowest Pizza Prices Search Engine
+    </h1>
     <!-- User Inputs (Street Address and Radius)
       - Number of pizzas
       - Number of toppings
       - Size of pizza-->
-
     <!-- TEMPLATE:
-      
       Enter your order: (insert text field here) 
-
-      
-      Button object t
     -->
-    <form id="frm1" action="/action_page.php">
+    <!-- Need a text box for input for Street Address and Radius (km)
+        -Drop down menus for # of pizzas, toppings, & size-->
+    <!-- Consider warning messages for unrecognized inputs-->
+
+    <form id="inputs" action="/action_page.php">
       Enter the Street Address: <input type="text" name="sAddress"><br>
-      Enter the Radius: <input type="text" name="radius" value="Duck"><br><br>
+      Enter the Radius: <input type="text" name="radius"><br>
+      Enter the Number of Pizzas: <input type="text" name="numPizza"><br>
+      Enter the Number of Toppings <input type="text" name="toppings"><br>
+      Select the size of the Pizza:
+      <select id="mySelect">
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select><br>
     </form>
     
     <p><a href="/scrape">Test Link</a></p>
@@ -29,6 +40,9 @@
         -Drop down menus for # of pizzas, toppings, & size-->
 
     <!-- Consider warning messages for unrecognized inputs-->
+    <p>
+      <button href="https://www.google.ca/">Start Search</button><br>
+    </p>
 
     <!-- Display Output
         -Total price of order from 5 cheapest locations
@@ -43,5 +57,4 @@
     END TEMPLATE-->
     
   </body>
-
 </html>
