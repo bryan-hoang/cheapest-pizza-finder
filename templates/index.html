@@ -7,41 +7,60 @@
   </head>
 
   <body>
+    <h1>
+      Lowest Pizza Prices Search Engine
+    </h1>
     <!-- User Inputs (Street Address and Radius)
       - Number of pizzas
       - Number of toppings
       - Size of pizza-->
-
     <!-- TEMPLATE:
-      
-      Enter your order: (insert text field here) 
-
-      
-      Button object t
+      Enter your order: (insert text field here)
     -->
-    <form id="frm1" action="/action_page.php">
-      Enter the Street Address: <input type="text" name="sAddress"><br>
-      Enter the Radius: <input type="text" name="radius" value="Duck"><br><br>
-    </form>
-    
-    <p><a href="/scrape">Test Link</a></p>
     <!-- Need a text box for input for Street Address and Radius (km)
         -Drop down menus for # of pizzas, toppings, & size-->
-
     <!-- Consider warning messages for unrecognized inputs-->
+
+    <form id="inputs" action="/action_page.php">
+      Enter the Street Address: <input type="text" name="sAddress"><br>
+      Enter the Radius: <input type="text" name="radius"><br>
+      Enter the Number of Pizzas: <input type="text" name="numPizza"><br>
+      Enter the Number of Toppings <input type="text" name="toppings"><br>
+      Select the size of the Pizza:
+      <select id="mySelect">
+        <option>Small</option>
+        <option>Medium</option>
+        <option>Large</option>
+      </select><br>
+    </form>
+    <p>
+      <button onclick="searchFunction()">Start Search</button><br>
+    </p>
+    <script>
+      function searchFunction() {
+        var x = document.getElementsByName("sAddress");
+        var text = "";
+        var i;
+        for (i = 0; i < x.length; i++) {
+          text += x.elements[i].value + "<br>";
+        }
+        document.getElementById("Output").innerHTML = Text;
+      }
+
+    </script>
 
     <!-- Display Output
         -Total price of order from 5 cheapest locations
         -Distance to and brand of the store-->
 
-    <!-- TEMPLATE 
-        
+    <p id="Output"></p>
+
+
+    <!-- TEMPLATE
         Here is what was found:
-        
         List of Stores with Price and Distance beside them
-        
     END TEMPLATE-->
-    
+
   </body>
 
 </html>
