@@ -11,8 +11,17 @@
         <h1>
             Lowest Pizza Prices in the Area
         </h1>
-        <p>Hey guise this is a test!!!</p>
-		<p>Example Price: {{template_price}}</p>
+        <p>Prices:</p>
+		<table border = 1>
+         {% for key, value in price_dict.items() %}
+         
+            <tr>
+               <th> {{ key }} </th>
+               <td> {{ value }} </td>
+            </tr>
+            
+         {% endfor %}
+      </table>
     </body>
     <!-- TEMPLATE
         Here is what was found:
