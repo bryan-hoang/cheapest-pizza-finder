@@ -28,7 +28,7 @@
       Enter the Number of Toppings <input type="text" name="toppings"><br>
       Select the size of the Pizza:
       <select id="mySelect">
-        <option>Small</option>
+        <option>Small</option>git 
         <option>Medium</option>
         <option>Large</option>
       </select><br>
@@ -56,25 +56,5 @@
     </script>
 
   </body>
-
-  <script>
-    function postData(input) {
-      $.ajax({
-        type: "POST",
-        url: "/test.py",
-        data: {
-          param: input
-        },
-        success: callbackFunc
-      });
-    }
-
-    function callbackFunc(response) {
-      // do something with the response
-      console.log(response);
-      console.log("This is a log statement!");
-    }
-
-  </script>
 
 </html>
