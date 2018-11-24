@@ -16,23 +16,40 @@ def index():
     return render_template('index.html')
 
 # results page
+@app.route('/scrape/<address>/<radius>')
+def scrape(address, radius):
+	# This will do the actual web scraping
 
+	formatted_address = address.replace(' ', '%20')
 
-@app.route('/scrape/<address>')
-def scrape(address):
-    # This will do the actual web scraping
+	dict = {}
+	driver = webdriver.Chrome()
+	driver.get('https://www.yellowpages.ca/search/si/1/pizza/%s' % formatted_address)
 
-    formatted_address = address.replace(' ', '%20')
+	boxes = driver.find_elements_by_class_name('listing__content__wrapper')
+	amount_to_check = 4
+	for box in boxes:
+		try:
+			box_element = box.find_element_by_tag_name('h3')
+			box_name = box_element.text
+			box_link = box_element.find_element_by_tag_name('a').get_attribute('href')
+			#use a second driver?
+			driver2 = webdriver.Chrome()
+			box_price = get_price(driver2, box_link)
+			driver2.quit()
 
-    driver = webdriver.Chrome()
-    driver.get('https://www.yellowpages.ca/search/si/1/pizza/%s' %
-               formatted_address)
+			dict[box_name] = box_price
+		except Exception:
+			pass
 
-    time.sleep(3)
+		amount_to_check -= 1
+		if amount_to_check == 0:
+			break
 
-    driver.quit()
+	#time.sleep(3)
+	driver.quit()
 
-    example_price = get_price(
-        'www.yellowpages.ca/bus/Alberta/Calgary/GS-Square-Deep-Dish-Pizza/2302759.html')
+	#example_price = get_price('https://www.yellowpages.ca/bus/Alberta/Calgary/GS-Square-Deep-Dish-Pizza/2302759.html')
+	#dict['GS Square Deep Dish Pizza'] = example_price
 
-    return render_template('scrape.html', template_address=address, template_price=example_price)
+	return render_template('scrape.html', template_address = address, price_dict = dict)
