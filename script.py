@@ -20,13 +20,16 @@ def scrape(address):
 		
 	formatted_address = address.replace(' ', '%20')
 	
-	driver = webdriver.Chrome()
-	driver.get('https://www.yellowpages.ca/search/si/1/pizza/%s' % formatted_address)
+	#driver = webdriver.Chrome()
+	#driver.get('https://www.yellowpages.ca/search/si/1/pizza/%s' % formatted_address)
 
-	time.sleep(3)
+	#time.sleep(3)
 	
-	driver.quit()
+	#driver.quit()
 	
-	example_price = get_price('www.yellowpages.ca/bus/Alberta/Calgary/GS-Square-Deep-Dish-Pizza/2302759.html')
+	dict = {}
 	
-	return render_template('scrape.html', template_address = address, template_price = example_price)
+	example_price = get_price('https://www.yellowpages.ca/bus/Alberta/Calgary/GS-Square-Deep-Dish-Pizza/2302759.html')
+	dict['GS Square Deep Dish Pizza'] = example_price
+	
+	return render_template('scrape.html', template_address = address, price_dict = dict)
