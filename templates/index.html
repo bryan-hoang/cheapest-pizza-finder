@@ -24,14 +24,14 @@
 
     <form id="inputs">
       Enter the Street Address: <input type="text" id="sAddress"><br>
-      Enter the Radius: <input type="text" name="radius"><br>
-      Enter the Number of Pizzas: <input type="text" name="numPizza"><br>
-      Enter the Number of Toppings <input type="text" name="numToppings"><br>
+      Enter the Search Radius (km): <input type="text" Id="radius"><br>
+      Enter the Number of Pizzas: <input type="text" Id="numPizza"><br>
+      Enter the Number of Toppings <input type="text" Id="numToppings"><br>
       Select the size of the Pizza:
       <select id="sizeSelect">
-        <option>Small</option>
-        <option>Medium</option>
-        <option>Large</option>
+        <option value="1">Small</option>
+        <option value="2">Medium</option>
+        <option value="3">Large</option>
       </select><br>
     </form>
     <p>
@@ -41,16 +41,21 @@
     <script>
       function redirToSearch() {
         var address = document.getElementById("sAddress").value + "/";
-        address = encodeURI(address.trim())
-        // var radius = document.getElementsByName("radius").value + "/";
-        // var numPizza = document.getElementsByName("numPizza").value + "/";
-        // var numToppings = document.getElementsByName("numToppings").value + "/";
+        address = encodeURI(address.trim());
+        var radius = document.getElementById("radius").value + "/";
+        radius = encodeURI(radius.trim());
+        // var numPizza = document.getElementById("numPizza").value + "/";
+        // numPizza = encodeURI(numPizza.trim());
+        // var numToppings = document.getElementById("numToppings").value + "/";
+        // numToppings = encodeURI(numToppings.trim());
         // var sizeSelect = document.getElementById("sizeSelect").value;
         // var size = sizeSelect.options[sizeSelect.selectedIndex].text + "/";
+        // size = encodeURI(size.trim());
 
-        window.location.href = "scrape/" + address;
+        window.location.href = "scrape/" + address + radius;
+        // + numPizza + numToppings + size
 
-        // document.getElementById("test").innerHTML = 'scrape/' + address;
+        // document.getElementById("test").innerHTML = size;
       }
 
     </script>
