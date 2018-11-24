@@ -2,10 +2,11 @@
 <html>
 
   <head>
-    <title>
-      Lowest Pizza Prices Search Engine
-    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
+  <title>
+    Lowest Pizza Prices in the area
+  </title>
 
   <body>
     <h1>
@@ -35,32 +36,34 @@
       </select><br>
     </form>
     <p>
-      <button onclick="searchFunction()">Start Search</button><br>
+      <button href="https://www.google.ca/">Start Search</button><br>
     </p>
-    <script>
-      function searchFunction() {
-        var x = document.getElementsByName("sAddress");
-        var text = "";
-        var i;
-        for (i = 0; i < x.length; i++) {
-          text += x.elements[i].value + "<br>";
-        }
-        document.getElementById("Output").innerHTML = Text;
-      }
-
-    </script>
 
     <!-- Display Output
         -Total price of order from 5 cheapest locations
         -Distance to and brand of the store-->
 
-    <p id="Output"></p>
 
 
-    <!-- TEMPLATE 
-        Here is what was found:
-        List of Stores with Price and Distance beside them
-    END TEMPLATE-->
   </body>
+  <script>
+    function postData(input) {
+      $.ajax({
+        type: "POST",
+        url: "/test.py",
+        data: {
+          param: input
+        },
+        success: callbackFunc
+      });
+    }
+
+    function callbackFunc(response) {
+      // do something with the response
+      console.log(response);
+      console.log("This is a log statement!");
+    }
+
+  </script>
 
 </html>
