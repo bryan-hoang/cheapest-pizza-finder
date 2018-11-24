@@ -21,25 +21,31 @@
         -Drop down menus for # of pizzas, toppings, & size-->
     <!-- Consider warning messages for unrecognized inputs-->
 
-    <form id="inputs" action="/action_page.php">
+    <form id="inputs">
       Enter the Street Address: <input type="text" name="sAddress"><br>
       Enter the Radius: <input type="text" name="radius"><br>
       Enter the Number of Pizzas: <input type="text" name="numPizza"><br>
-      Enter the Number of Toppings <input type="text" name="toppings"><br>
+      Enter the Number of Toppings <input type="text" name="numToppings"><br>
       Select the size of the Pizza:
-      <select id="mySelect">
-        <option>Small</option>git
+      <select id="sizeSelect">
+        <option>Small</option>
         <option>Medium</option>
         <option>Large</option>
       </select><br>
+      <button onclick="redirToSearch();">Start Search</button>
     </form>
-    <p>
-      <button onclick="location.href='/scrape/' ">Start Search</button><br>
-    </p>
-    <!-- Need a text box for input for Street Address and Radius (km)
-        -Drop down menus for # of pizzas, toppings, & size-->
+    <script>
+      function redirToSearch() {
+        var address = document.getElementsByName("sAddress").text + "/";
+        // var radius = document.getElementsByName("radius").value + "/";
+        // var numPizza = document.getElementsByName("numPizza").value + "/";
+        // var numToppings = document.getElementsByName("numToppings").value + "/";
+        // var sizeSelect = document.getElementById("sizeSelect").value;
+        // var size = sizeSelect.options[sizeSelect.selectedIndex].text + "/";
+        window.location.href = "scrape/"
+      }
 
-    <!-- Consider warning messages for unrecognized inputs-->
+    </script>
   </body>
 
 </html>
