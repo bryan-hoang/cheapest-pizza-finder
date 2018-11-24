@@ -2,9 +2,8 @@
 
 from selenium import webdriver
 
-def get_price(website):
+def get_price(driver, website):
 
-	driver = webdriver.Chrome()
 	driver.get(website)
 	output = 'Stuff:\n\n'
 	
@@ -37,7 +36,5 @@ def get_price(website):
 			output += 'FAIL\n'
 			pass
 		output += '\n\n'
-	
-	driver.quit()
-	
+		
 	return rate;
