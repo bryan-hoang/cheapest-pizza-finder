@@ -23,7 +23,7 @@
     <!-- Consider warning messages for unrecognized inputs-->
 
     <form id="inputs">
-      Enter the Street Address: <input type="text" name="sAddress"><br>
+      Enter the Street Address: <input type="text" id="sAddress"><br>
       Enter the Radius: <input type="text" name="radius"><br>
       Enter the Number of Pizzas: <input type="text" name="numPizza"><br>
       Enter the Number of Toppings <input type="text" name="numToppings"><br>
@@ -33,37 +33,28 @@
         <option>Medium</option>
         <option>Large</option>
       </select><br>
-      <button onclick="redirToSearch();">Start Search</button>
     </form>
+    <p>
+      <button onclick="redirToSearch();">Start Search</button>
+    </p>
+    <p id="test"></p>
     <script>
       function redirToSearch() {
-        var address = document.getElementsByName("sAddress").text + "/";
+        var address = document.getElementById("sAddress").value + "/";
+        address = encodeURI(address.trim())
         // var radius = document.getElementsByName("radius").value + "/";
         // var numPizza = document.getElementsByName("numPizza").value + "/";
         // var numToppings = document.getElementsByName("numToppings").value + "/";
         // var sizeSelect = document.getElementById("sizeSelect").value;
         // var size = sizeSelect.options[sizeSelect.selectedIndex].text + "/";
-        window.location.href = "scrape/"
+
+        window.location.href = "scrape/" + address;
+
+        // document.getElementById("test").innerHTML = 'scrape/' + address;
       }
 
     </script>
-    <script>
-      function postData(input) {
-        $.ajax({
-          type: "POST",
-          url: "/test.py",
-          data: {
-            param: input
-          },
-          success: callbackFunc
-        });
-      }
-      function callbackFunc(response) {
-        // do something with the response
-        console.log(response);
-        console.log("This is a log statement!");
-      }
-    </script>
+
   </body>
 
 </html>

@@ -9,24 +9,30 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 # main page
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 # results page
+
+
 @app.route('/scrape/<address>')
 def scrape(address):
-	# This will do the actual web scraping
-		
-	formatted_address = address.replace(' ', '%20')
-	
-	driver = webdriver.Chrome()
-	driver.get('https://www.yellowpages.ca/search/si/1/pizza/%s' % formatted_address)
+    # This will do the actual web scraping
 
-	time.sleep(3)
-	
-	driver.quit()
-	
-	example_price = get_price('www.yellowpages.ca/bus/Alberta/Calgary/GS-Square-Deep-Dish-Pizza/2302759.html')
-	
-	return render_template('scrape.html', template_address = address, template_price = example_price)
+    formatted_address = address.replace(' ', '%20')
+
+    driver = webdriver.Chrome()
+    driver.get('https://www.yellowpages.ca/search/si/1/pizza/%s' %
+               formatted_address)
+
+    time.sleep(3)
+
+    driver.quit()
+
+    example_price = get_price(
+        'www.yellowpages.ca/bus/Alberta/Calgary/GS-Square-Deep-Dish-Pizza/2302759.html')
+
+    return render_template('scrape.html', template_address=address, template_price=example_price)
