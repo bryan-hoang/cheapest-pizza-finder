@@ -1,6 +1,7 @@
 # this is a test script
 
 import time
+from price_scraper import get_price
 from selenium import webdriver
 from flask import Flask, render_template
 
@@ -16,13 +17,16 @@ def index():
 @app.route('/scrape/<address>')
 def scrape(address):
 	# This will do the actual web scraping
+		
+	formatted_address = address.replace(' ', '%20')
 	
-	# This is some thing
 	driver = webdriver.Chrome()
-	driver.get('chrome://settings/')
+	driver.get('https://www.yellowpages.ca/search/si/1/pizza/%s' % formatted_address)
 
-	time.sleep(3);
+	time.sleep(3)
 	
-	driver.quit();
+	driver.quit()
 	
-	return render_template('scrape.html', template_address = address)
+	example_price = get_price('www.yellowpages.ca/bus/Alberta/Calgary/GS-Square-Deep-Dish-Pizza/2302759.html')
+	
+	return render_template('scrape.html', template_address = address, template_price = example_price)
