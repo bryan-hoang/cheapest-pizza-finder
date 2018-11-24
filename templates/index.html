@@ -33,26 +33,26 @@
         <option value="2">Medium</option>
         <option value="3">Large</option>
       </select><br>
-    </form>	
-	<p><a href="scrape/289%20Dalcastle%20Dr.">Test Link</a></p>
-	
+    </form>
+    <p><a href="scrape/289%20Dalcastle%20Dr.">Test Link</a></p>
+
     <p>
       <button onclick="redirToSearch();">Start Search</button>
     </p>
     <p id="test"></p>
     <script>
       function redirToSearch() {
-        var address = document.getElementById("sAddress").value + "/";
+        var address = document.getElementById("sAddress").value;
         address = encodeURI(address.trim());
-        var radius = document.getElementById("radius").value;
+        var radius = '/' + document.getElementById("radius").value;
         radius = encodeURI(radius.trim());
-        // var numPizza = document.getElementById("numPizza").value + "/";
+        // var numPizza = '/' + document.getElementById("numPizza").value ;
         // numPizza = encodeURI(numPizza.trim());
-        // var numToppings = document.getElementById("numToppings").value + "/";
+        // var numToppings = '/' + document.getElementById("numToppings").value;
         // numToppings = encodeURI(numToppings.trim());
-        // var sizeSelect = document.getElementById("sizeSelect").value;
-        // var size = sizeSelect.options[sizeSelect.selectedIndex].text + "/";
-        // size = encodeURI(size.trim());
+        // var sizeSelect = '/' + document.getElementById("sizeSelect").value;
+        // var size = sizeSelect.options[sizeSelect.selectedIndex].text;
+        // size = '/' + encodeURI(size.trim());
 
         window.location.href = "scrape/" + address + radius;
         // + numPizza + numToppings + size
