@@ -14,8 +14,8 @@ def index():
     return render_template('index.html')
 
 # results page
-@app.route('/scrape/<address>')
-def scrape(address):
+@app.route('/scrape/<address>/<radius>')
+def scrape(address, radius):
 	# This will do the actual web scraping
 		
 	formatted_address = address.replace(' ', '%20')
