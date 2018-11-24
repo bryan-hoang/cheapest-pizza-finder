@@ -41,20 +41,29 @@
 
     <!-- Consider warning messages for unrecognized inputs-->
     <p>
-      <button href="https://www.google.ca/">Start Search</button><br>
+      <button onclick="location.href='/scrape' ">Start Search</button><br>
     </p>
 
-    <!-- Display Output
-        -Total price of order from 5 cheapest locations
-        -Distance to and brand of the store-->
-
-    <!-- TEMPLATE 
-        
-        Here is what was found:
-        
-        List of Stores with Price and Distance beside them
-        
-    END TEMPLATE-->
-    
   </body>
+
+  <script>
+    function postData(input) {
+      $.ajax({
+        type: "POST",
+        url: "/test.py",
+        data: {
+          param: input
+        },
+        success: callbackFunc
+      });
+    }
+
+    function callbackFunc(response) {
+      // do something with the response
+      console.log(response);
+      console.log("This is a log statement!");
+    }
+
+  </script>
+
 </html>
