@@ -28,33 +28,18 @@
       Enter the Number of Toppings <input type="text" name="toppings"><br>
       Select the size of the Pizza:
       <select id="mySelect">
-        <option>Small</option>git 
+        <option>Small</option>git
         <option>Medium</option>
         <option>Large</option>
       </select><br>
     </form>
-
-    <p><a href="/scrape/this_is_a_test">Test Link</a></p>
+    <p>
+      <button onclick="location.href='/scrape/' ">Start Search</button><br>
+    </p>
     <!-- Need a text box for input for Street Address and Radius (km)
         -Drop down menus for # of pizzas, toppings, & size-->
 
     <!-- Consider warning messages for unrecognized inputs-->
-    <p>
-      <button onclick="location.href='/scrape' ">Start Search</button><br>
-    </p>
-    <script>
-      function searchFunction() {
-        var x = document.getElementsByName("sAddress");
-        var text = "";
-        var i;
-        for (i = 0; i < x.length; i++) {
-          text += x.elements[i].value + "<br>";
-        }
-        document.getElementById("Output").innerHTML = Text;
-      }
-
-    </script>
-
   </body>
 
 </html>
