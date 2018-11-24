@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>
+      Lowest Pizza Prices in the area
+    </title>
   </head>
-  <title>
-    Lowest Pizza Prices in the area
-  </title>
 
   <body>
     <!-- User Inputs (Street Address and Radius)
@@ -25,9 +24,7 @@
       Enter the Radius: <input type="text" name="radius" value="Duck"><br><br>
     </form>
     
-    <p>
-      <button onclick="Function()">Start Search</button>
-    </p>
+    <p><a href="/scrape">Test Link</a></p>
     <!-- Need a text box for input for Street Address and Radius (km)
         -Drop down menus for # of pizzas, toppings, & size-->
 
@@ -44,25 +41,7 @@
         List of Stores with Price and Distance beside them
         
     END TEMPLATE-->
-  
-  <button type="button" onclick="postData()">Try it</button>
-  
+    
   </body>
-  <script>
-  function postData(input) {
-		$.ajax({
-			type: "POST",
-			url: "/test.py",
-			data: { param: input },
-			success: callbackFunc
-		});
-	}
-
-	function callbackFunc(response) {
-		// do something with the response
-		console.log(response);
-		console.log("This is a log statement!");
-	}
-</script>
 
 </html>
