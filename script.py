@@ -25,7 +25,7 @@ def scrape(address, radius):
 	driver.get('https://www.yellowpages.ca/search/si/1/pizza/%s' % formatted_address)
 	
 	boxes = driver.find_elements_by_class_name('listing__content__wrapper')
-	amount_to_check = 2
+	amount_to_check = 4
 	for box in boxes:
 		try:
 			box_element = box.find_element_by_tag_name('h3')
@@ -37,10 +37,10 @@ def scrape(address, radius):
 			driver2.quit()
 			
 			dict[box_name] = box_price
-			amount_to_check -= 1
 		except Exception:
 			pass
 		
+		amount_to_check -= 1
 		if amount_to_check == 0:
 			break
 	
