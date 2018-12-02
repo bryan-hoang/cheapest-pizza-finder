@@ -1,4 +1,4 @@
-# Team 3
+# QEC Programming Challenge - Team 3: Lowest Pizza Prices in the Area
 
 The code in this repository runs a web application that takes user input of current address and desired radius. The app uses web scraping to compare the pizza prices from shops within the input radius, and returns the addresses and names of the shops with the lowest priced pizzas.
 
