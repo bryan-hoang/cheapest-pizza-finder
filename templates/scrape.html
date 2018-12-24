@@ -1,32 +1,24 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Lowest Pizza Prices in the Area</title>
+  </head>
 
-    <head>
-        <title>
-            Lowest Pizza Prices in the Area
-        </title>
-    </head>
-
-    <body>
-        <h1>
-            Lowest Pizza Prices in the Area
-        </h1>
-        <p>Prices:</p>
-		<table border = 1>
-         {% for key, value in price_dict.items() %}
-         
-            <tr>
-               <th> {{ key }} </th>
-               <td> {{ value }} </td>
-            </tr>
-            
-         {% endfor %}
-      </table>
-    </body>
-    <!-- TEMPLATE
+  <body>
+    <h1>Lowest Pizza Prices in the Area</h1>
+    <p>Prices:</p>
+    <table border="1">
+      {% for key, value in price_dict.items() %}
+      <tr>
+        <th>{{ key }}</th>
+        <td>{{ value }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+  <!-- TEMPLATE
         Here is what was found:
         List of Stores with Price and Distance beside them
         END TEMPLATE
     -->
-
 </html>
