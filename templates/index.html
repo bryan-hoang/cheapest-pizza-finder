@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
-
   <head>
-    <title>
-      Lowest Pizza Prices Search Engine
-    </title>
+    <title>Lowest Pizza Prices Search Engine</title>
   </head>
 
   <body>
-    <h1>
-      Lowest Pizza Prices Search Engine
-    </h1>
+    <h1>Lowest Pizza Prices Search Engine</h1>
+
     <!-- User Inputs (Street Address and Radius)
       - Number of pizzas
       - Number of toppings
@@ -23,28 +19,27 @@
     <!-- Consider warning messages for unrecognized inputs-->
 
     <form id="inputs">
-      Enter the Street Address: <input type="text" id="sAddress"><br>
-      Enter the Search Radius (km): <input type="text" Id="radius"><br>
-      Enter the Number of Pizzas: <input type="text" Id="numPizza"><br>
-      Enter the Number of Toppings <input type="text" Id="numToppings"><br>
+      Enter the Street Address: <input type="text" id="sAddress" /><br />
+      Enter the Search Radius (km): <input type="text" Id="radius" /><br />
+      Enter the Number of Pizzas: <input type="text" Id="numPizza" /><br />
+      Enter the Number of Toppings <input type="text" Id="numToppings" /><br />
       Select the size of the Pizza:
       <select id="sizeSelect">
         <option value="1">Small</option>
         <option value="2">Medium</option>
-        <option value="3">Large</option>
-      </select><br>
+        <option value="3">Large</option> </select
+      ><br />
     </form>
+
     <p><a href="scrape/289%20Dalcastle%20Dr.">Test Link</a></p>
 
-    <p>
-      <button onclick="redirToSearch();">Start Search</button>
-    </p>
-    <p id="test"></p>
+    <p><button onclick="redirToSearch();">Start Search</button></p>
+
     <script>
       function redirToSearch() {
         var address = document.getElementById("sAddress").value;
         address = encodeURI(address.trim());
-        var radius = '/' + document.getElementById("radius").value;
+        var radius = "/" + document.getElementById("radius").value;
         radius = encodeURI(radius.trim());
         // var numPizza = '/' + document.getElementById("numPizza").value ;
         // numPizza = encodeURI(numPizza.trim());
@@ -59,9 +54,6 @@
 
         // document.getElementById("test").innerHTML = size;
       }
-
     </script>
-
   </body>
-
 </html>
