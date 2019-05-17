@@ -1,4 +1,4 @@
-# Cheapest-Pizza-Finder
+# Cheapest Pizza Finder
 
 A web app made during the Queen's Engineering Competition - Programmming in 2018.
 
