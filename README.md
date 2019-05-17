@@ -1,6 +1,6 @@
 # Cheapest-Pizza-Finder
 
-A web app made during the Queen's Engineering programming competition (2018).
+A web app made during the Queen's Engineering Competition - Programmming in 2018.
 
 The code in this repository runs a web application that takes user input of current address and desired radius. The app uses web scraping to compare the pizza prices from shops within the input radius, and returns the addresses and names of the shops with the lowest priced pizzas.
 
