@@ -1,0 +1,17 @@
+[project]
+dependencies = [
+    "flask>=3.1.0",
+    "selenium>=4.27.1",
+]
+name = "cheapest-pizza-finder"
+readme = "README.md"
+requires-python = ">=3.13"
+version = "0.1.0"
+
+[dependency-groups]
+dev = [
+    "poethepoet>=0.31.1",
+]
+
+[tool.poe.tasks]
+serve = "flask --app cheapest_pizza_finder run"
