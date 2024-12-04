@@ -1,7 +1,54 @@
-# Cheapest Pizza Finder
+# cheapest-pizza-finder
 
-A web app made during the Queen's Engineering Competition - Programmming in 2018.
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-The code in this repository runs a web application that takes user input of current address and desired radius. The app uses web scraping to compare the pizza prices from shops within the input radius, and returns the addresses and names of the shops with the lowest priced pizzas.
+A web scraping flask app made during the Queen&#39;s Engineering Competition
+in 2018.
 
-Additional features that would be added with more time on the project are ability to process and find lowest prices for user specified number of toppings, number of pizzas, and pizza sizes.
+The code in this repository runs a web application that takes user input of
+current address and desired radius. The app uses web scraping to compare the
+pizza prices from shops within the input radius, and returns the addresses and
+names of the shops with the lowest priced pizzas.
+
+Additional features that would be added with more time on the project are
+ability to process and find lowest prices for user specified number of toppings,
+number of pizzas, and pizza sizes.
+
+The original repo is <https://github.com/QECProgramming/team3>.
+
+## Install
+
+Prerequisites:
+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/)
+
+Steps:
+
+```console
+git clone https://github.com/bryan-hoang/cheapest-pizza-finder.git
+cd cheapest-pizza-finder
+uv sync
+```
+
+## Usage
+
+```console
+uv run poe serve
+# Visit http://127.0.0.1:5000
+```
+
+## Maintainers
+
+- [@bryan-hoang](https://github.com/bryan-hoang)
+- [@alcatrazEscapee](https://github.com/alcatrazEscapee)
+- [@liam-cregg](https://github.com/liam-cregg)
+- [@16zl67](https://github.com/16zl67)
+
+## Contributing
+
+Small note: If editing the README, please conform to the
+[standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+
+## License
+
+MIT © 2018 Bryan Hoang and contributors
